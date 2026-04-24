@@ -93,14 +93,19 @@ const Box = ({ id, title, subtitle, icon, badges, link }: BoxProps) => {
     </>
   );
 
-  const commonProps = {
-    id,
-    onMouseEnter: () => setIsHovered(true),
-    onMouseLeave: () => setIsHovered(false),
-    className: "glass-card relative group cursor-pointer min-w-[180px] md:min-w-[220px] bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:border-indigo-500/50",
-    whileHover: { scale: 1.02, y: -5 },
-    transition: { duration: 0.2, type: "spring", stiffness: 200 }
-  };
+const commonProps = {
+  id,
+  onMouseEnter: () => setIsHovered(true),
+  onMouseLeave: () => setIsHovered(false),
+  className:
+    "glass-card relative group cursor-pointer min-w-[180px] md:min-w-[220px] bg-white/5 backdrop-blur-lg rounded-2xl border border-white/10 shadow-xl transition-all duration-300 hover:border-indigo-500/50",
+  whileHover: { scale: 1.03, y: -6 },
+  transition: {
+    type: "spring" as const,
+    stiffness: 180,
+    damping: 14
+  }
+};
 
   if (link) {
     return (
@@ -313,12 +318,14 @@ export default function ArchitecturePage() {
               curveness={0.6}
               showHead={true}
               headSize={6}
-              dashness={{ strokeLen: 8, spaceLen: 4 }}
-              label={
-                <div className="bg-green-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm whitespace-nowrap">
-                  Migrate
-                </div>
-              }
+              dashness={{ strokeLen: 8, nonStrokeLen: 4 }}
+              labels={{
+  middle: (
+    <div className="bg-green-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm whitespace-nowrap">
+      Migrate
+    </div>
+  )
+}}
             />
             <Xarrow 
               start="oracle" 
@@ -328,12 +335,14 @@ export default function ArchitecturePage() {
               curveness={0.6}
               showHead={true}
               headSize={6}
-              dashness={{ strokeLen: 8, spaceLen: 4 }}
-              label={
-                <div className="bg-green-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
-                  Data Migration
-                </div>
-              }
+              dashness={{ strokeLen: 8, nonStrokeLen: 4 }}
+              labels={{
+  middle: (
+    <div className="bg-green-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm whitespace-nowrap">
+      Data Migration
+    </div>
+  )
+}}
             />
 
             {/* Payment Flow Arrows */}
@@ -366,11 +375,13 @@ export default function ArchitecturePage() {
               showHead={true}
               headSize={5}
               animateDrawing={true}
-              label={
-                <div className="bg-purple-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
-                  Temp Save
-                </div>
-              }
+              labels={{
+  middle: (
+    <div className="bg-purple-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
+      Temp Save
+    </div>
+  )
+}}
             />
             <Xarrow 
               start="mongoFlowBox" 
@@ -391,34 +402,37 @@ export default function ArchitecturePage() {
               showHead={true}
               headSize={5}
               animateDrawing={true}
-              label={
-                <div className="bg-purple-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
-                  Finalize
-                </div>
-              }
+              labels={{
+  middle: (
+    <div className="bg-purple-500/80 text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
+      Finalize
+    </div>
+  )
+}}
             />
 
             {/* Module Connections (Optional subtle indicators) */}
             <Xarrow 
-              start="nextJs" 
-              end="modulePayments" 
-              color="#6366f1" 
-              strokeWidth={2}
-              curveness={0.8}
-              showHead={true}
-              headSize={4}
-              dashness={{ strokeLen: 6, spaceLen: 4 }}
-            />
-            <Xarrow 
-              start="nestJs" 
-              end="modulePayments" 
-              color="#6366f1" 
-              strokeWidth={2}
-              curveness={0.4}
-              showHead={true}
-              headSize={4}
-              dashness={{ strokeLen: 6, spaceLen: 4 }}
-            />
+  start="nextJs" 
+  end="modulePayments" 
+  color="#6366f1" 
+  strokeWidth={2}
+  curveness={0.8}
+  showHead={true}
+  headSize={4}
+  dashness={{ strokeLen: 6, nonStrokeLen: 4 }}
+/>
+
+<Xarrow 
+  start="nestJs" 
+  end="modulePayments" 
+  color="#6366f1" 
+  strokeWidth={2}
+  curveness={0.4}
+  showHead={true}
+  headSize={4}
+  dashness={{ strokeLen: 6, nonStrokeLen: 4 }}
+/>
           </div>
         </div>
 

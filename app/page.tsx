@@ -288,11 +288,13 @@ export default function FlowPage() {
               endAnchor="top"
               showHead={true}
               headSize={6}
-              label={
-                <div className="bg-blue-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
-                  Token Access
-                </div>
-              }
+              labels={{
+  middle: (
+    <div className="bg-blue-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
+      Token Access
+    </div>
+  )
+}}
             />
             
             <Xarrow 
@@ -305,11 +307,13 @@ export default function FlowPage() {
               endAnchor="top"
               showHead={true}
               headSize={6}
-              label={
-                <div className="bg-purple-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
-                  Direct URL
-                </div>
-              }
+              labels={{
+  middle: (
+    <div className="bg-purple-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
+      Direct URL
+    </div>
+  )
+}}
             />
             
             {/* Parent Portal branch flow */}
@@ -335,11 +339,13 @@ export default function FlowPage() {
               endAnchor="top"
               showHead={true}
               headSize={6}
-              label={
-                <div className="bg-green-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
-                  ✅ Valid
-                </div>
-              }
+             labels={{
+  middle: (
+    <div className="bg-green-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
+      ✅ Valid
+    </div>
+  )
+}}
             />
             
             {/* Direct URL branch flow */}
@@ -377,11 +383,13 @@ export default function FlowPage() {
               endAnchor="top"
               showHead={true}
               headSize={6}
-              label={
-                <div className="bg-green-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
-                  ✅ Verified
-                </div>
-              }
+              labels={{
+  middle: (
+    <div className="bg-green-500/90 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg backdrop-blur-sm">
+      ✅ Verified
+    </div>
+  )
+}}
             />
             
             {/* Payment flow arrows */}
@@ -452,22 +460,24 @@ export default function FlowPage() {
             
             {/* Error path from validateToken (optional) */}
             <Xarrow 
-              start="validateToken" 
-              end="directLogin" 
-              strokeWidth={2}
-              color="#ef4444"
-              curveness={1.2}
-              startAnchor="left"
-              endAnchor="right"
-              showHead={true}
-              headSize={5}
-              dashness={{ strokeLen: 8, spaceLen: 6 }}
-              label={
-                <div className="bg-red-500/80 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg">
-                  ❌ Invalid
-                </div>
-              }
-            />
+  start="validateToken" 
+  end="directLogin" 
+  strokeWidth={2}
+  color="#ef4444"
+  curveness={1.2}
+  startAnchor="left"
+  endAnchor="right"
+  showHead={true}
+  headSize={5}
+  dashness={{ strokeLen: 8, nonStrokeLen: 6 }}
+  labels={{
+    middle: (
+      <div className="bg-red-500/80 text-white text-xs font-bold px-2 py-0.5 rounded-full shadow-lg">
+        ❌ Invalid
+      </div>
+    )
+  }}
+/>
             
           </div>
         </div>
