@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
 
-const nextConfig: NextConfig = {
-  /* config options here */
+  // ✅ Allow access from your network (mobile / other devices)
+  allowedDevOrigins: ["10.30.30.121"],
+
 };
 
-export default nextConfig;
+module.exports = nextConfig;
