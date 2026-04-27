@@ -175,7 +175,7 @@ export default function ArchitecturePage() {
             <div className="flex flex-col items-center gap-6">
               <h2 className="text-red-400 text-xl font-semibold tracking-wide flex items-center gap-2">
                 <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                Legacy System
+                Current System
               </h2>
               <div className="flex gap-8 flex-wrap justify-center">
                 <Box 
@@ -183,7 +183,7 @@ export default function ArchitecturePage() {
                   title="Yii2" 
                   subtitle="Website & APIs" 
                   icon={<Server className="w-6 h-6 text-red-400" />} 
-                  badges={[{ text: "OLD", color: "red" }]}
+                  badges={[{ text: "Current", color: "red" }]}
                   link={TECH_LINKS.yii}
                 />
                 <Box 
@@ -191,7 +191,7 @@ export default function ArchitecturePage() {
                   title="PHP 5.6.40" 
                   subtitle="Backend Language" 
                   icon={<Cpu className="w-6 h-6 text-red-400" />} 
-                  badges={[{ text: "OLD", color: "red" }]}
+                  badges={[{ text: "Current", color: "red" }]}
                   link={TECH_LINKS.php}
                 />
                 <Box 
@@ -199,7 +199,7 @@ export default function ArchitecturePage() {
                   title="Oracle DB" 
                   subtitle="Database" 
                   icon={<Database className="w-6 h-6 text-red-400" />} 
-                  badges={[{ text: "OLD", color: "red" }]}
+                  badges={[{ text: "Current", color: "red" }]}
                   link={TECH_LINKS.oracle}
                 />
               </div>
@@ -209,14 +209,14 @@ export default function ArchitecturePage() {
                   title="Android App" 
                   subtitle="Kotlin + Java" 
                   icon={<Smartphone className="w-6 h-6 text-red-400" />} 
-                  badges={[{ text: "OLD", color: "red" }]}
+                  badges={[{ text: "Current", color: "red" }]}
                 />
                 <Box 
                   id="ios" 
                   title="iOS App" 
                   subtitle="SwiftUI" 
                   icon={<Smartphone className="w-6 h-6 text-red-400" />} 
-                  badges={[{ text: "OLD", color: "red" }]}
+                  badges={[{ text: "Current", color: "red" }]}
                 />
               </div>
             </div>
